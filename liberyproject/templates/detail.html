@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+view detail
+{% endblock %}
+
+{% block content %}
+<center>
+    <h3>VIEW BOOK DETAILS</h3>
+</center>
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <td>{{b.title}}</td>
+    </tr>
+
+    <tr>
+        <th>Author</th>
+        <td>{{b.author}}</td>
+    </tr>
+
+    <tr>
+        <th>Price</th>
+        <td>{{b.price}}</td>
+    </tr>
+
+    <tr>
+        <th>Cover</th>
+        <td><img src="{{b.cover.url}}" height="150px" width="150px"></td>
+    </tr>
+
+    <tr>
+        <th>Pdf</th>
+        <td><a href="{{b.pdf.url}}">PDF</a></td>
+    </tr>
+
+</table>
+{% endblock %}
+
+</body>
+</html>
+</body>
+</html>

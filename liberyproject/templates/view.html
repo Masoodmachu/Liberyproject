@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+VIEW
+{% endblock %}
+
+{% block content %}
+<center>
+<h3>VIEW BOOK</h3>
+</center>
+    <table class="table table-bordered table-stripped">
+        <tr>
+            <th>TITLE:</th>
+            <th>AUTHOR:</th>
+            <th>PRICE:</th>
+            <th>Cover</th>
+            <th>PDF</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+           {% for i in book %}
+        <tr>
+
+            <td>{{i.title}}</td>
+            <td>{{i.author}}</td>
+            <td>{{i.price}}</td>
+            <td><img src="{{i.cover.url}}" height="100px" width="100px"></td>
+            <td><a href="{{i.pdf.url}}">Download</a></td>
+            <td><a href="{% url 'liberyapp:detail' i.id %}" class="btn btn-danger">View</a></td>
+            <td><a href="{% url 'liberyapp:edit' i.id %}" class="btn btn-danger">Edit</a></td>
+            <td><a class="btn btn-danger" href="{% url 'liberyapp:delete' i.id %}">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+<!--<ol type="1">-->
+<!--    {% for i in book %}-->
+<!--    <li>Book Details</li>-->
+<!--<ul>-->
+<!--    <li>TITLE:{{i.title}}</li>-->
+<!--    <li>AUTHOR:{{i.author}}</li>-->
+<!--    <li>PRICE:{{i.price}}</li><br>-->
+<!--   -->
+<!--</ul>-->
+<!--     {% endfor %}-->
+<!--</ol>-->
+
+<!--{% for i in book %}-->
+<!--<div class="card mt-2" style="width: 18rem;">-->
+<!--  <div class="card-body border border-2 border-warning">-->
+<!--    <h5 class="card-title">{{i.title}}</h5>-->
+<!--    <p class="card-text">{{i.author}}</p>-->
+<!--    <span>{{i.price}}</span>-->
+<!--  </div>-->
+<!--  </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+{% endblock %}

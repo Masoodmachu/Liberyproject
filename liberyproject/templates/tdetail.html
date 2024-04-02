@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+view teacher details
+
+{% endblock %}
+
+
+{% block content %}
+
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>Name</th>
+        <td>{{s.name}}</td>
+    </tr>
+    <tr>
+         <th>Subject</th>
+         <td>{{s.subject}}</td>
+    </tr>
+    <tr>
+         <th>Place</th>
+         <td>{{s.place}}</td>
+    </tr>
+    <tr>
+         <th>Image</th>
+         <td><img src="{{s.image.url}}" height="100px" width="100px"></td>
+    </tr>
+    <tr>
+         <th>Pdf</th>
+         <td><a href="{{s.pdf.url}}">Download</a> </td>
+    </tr>
+
+</table>
+
+{% endblock %}
+
+
+</html>

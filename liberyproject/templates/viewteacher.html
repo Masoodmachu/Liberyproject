@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+VIEW TEACHERS
+{% endblock %}
+
+{% block content %}
+<center>
+    <h3>VIEW TEACHERS</h3>
+</center>
+<!--<div class="container">-->
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Photo</th>
+        <th>Teacher Name</th>
+        <th>Subject</th>
+        <th>Place</th>
+        <th>Pdf</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for i in teacher %}
+    <tr>
+        <td><img src="{{i.image.url}}" height="100px" width="150px"></td>
+        <td>{{i.name}}</td>
+        <td>{{i.subject}}</td>
+        <td>{{i.place}}</td>
+        <td><a href="{{i.pdf.url}}">Download</a></td>
+        <td><a class="btn btn-danger" href="{% url 'student:tdetail' i.id %}">View</a> </td>
+        <td><a class="btn btn-danger" href="{% url 'student:editteacher' i.id %}">Edit</a> </td>
+        <td><a class="btn btn-danger" href="{% url 'student:delete' i.id %}">Delete</a> </td>
+    </tr>
+    {% endfor %}
+
+</table>
+<!--    </div>-->
+
+
+
+{% endblock %}
+</html>

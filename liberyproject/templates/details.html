@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+STUDENT DETAILS
+{% endblock %}
+
+{% block content %}
+<center>
+<h3>VIEW STUDENTS DETAILS</h3>
+</center>
+
+<ol type="1">
+    {% for i in students %}
+    <li style="color:gray;">STUDENT DETAILS:</li>
+<ul>
+
+    <li>{{i.name}}</li>
+    <li>{{i.age}}</li>
+    <li>{{i.place}}</li><br>
+
+</ul>
+    {% endfor %}
+</ol>
+
+
+
+
+
+{% endblock %}
+
+</html>

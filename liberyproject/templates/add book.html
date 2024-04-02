@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+ADD MUTHEE
+{% endblock %}
+
+{% block content %}
+<center>
+<h3>ADD BOOKS</h3>
+</center>
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label">TITLE:</label>
+        <input type="text" class="form-control" id="title" name="t">
+    <!--    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+      </div>
+
+
+
+      <div class="mb-3">
+        <label for="author" class="form-label">AUTHOR:</label>
+        <input type="text" class="form-control" id="author" name="a">
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">PRICE:</label>
+        <input type="number" class="form-control" id="price" name="p">
+      </div>
+
+      <div class="mb-3">
+        <label for="cover" class="form-label">COVER:</label>
+        <input type="file" class="form-control" id="cover" name="c">
+      </div>
+      <div class="mb-3">
+        <label for="pdf" class="form-label">PDF:</label>
+        <input type="file" class="form-control" id="pdf" name="pdf">
+      </div>
+        <center>
+      <button type="submit" class="btn btn-primary">Submit</button>
+            </center>
+    </form>
+</div>
+{% endblock %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block title %}
+ADD Student
+{% endblock %}
+
+{% block content %}
+<center>
+<h3 style="margin-top:10px;">ADD BOOKS</h3>
+</center>
+
+<div class="container">
+     <center>
+    <form method="POST">
+      {% csrf_token %}
+        {{form|crispy}}
+
+
+      <button type="submit" class="btn btn-primary mt-1">Submit</button>
+     </center>
+    </form>
+</div>
+{% endblock %}
+
+
+
+</body>
+</html>
